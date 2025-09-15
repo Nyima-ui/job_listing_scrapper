@@ -1,0 +1,12 @@
+[
+    {
+        "id" : 1,
+        "company" : "Uplers", 
+        "title" : "Mobile Engineer", 
+        "location" : "remote",
+        "employment-type" : "fulltime", 
+        "skill-requirements" : "html, css, React.js", 
+        "date-posted" : "2 months ago", 
+        "job-link" : "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4277208231&discover=recommended&discoveryOrigin=JOBS_HOME_JYMBII"
+    }
+]
