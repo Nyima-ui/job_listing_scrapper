@@ -4,6 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import undetected_chromedriver as uc
 from dotenv import load_dotenv
 
+from jobs_manager import Jobs
 
 import time
 import os
@@ -56,33 +57,72 @@ class LinkedInBot:
             print("⚠️ 'Show all' button not found or not clickable.")
 
     def extract_data(self):
-        ul = self.wait.until(
-            EC.presence_of_element_located(
-                (By.CLASS_NAME, "ZoMBgxcPjwbXwxVDiHJRnBmTIhQPBYxqqgkZo")
+        job_data = []
+        job_elements = self.wait.until(
+            EC.presence_of_all_elements_located(
+                (By.XPATH, "//li[contains(@class, 'ember-view')]")
             )
         )
-        jobs_list = ul.find_elements(By.TAG_NAME, "li")
-        for job in jobs_list:
-            job.click()
-            job_data = []
-            company = self.wait.until(
-                EC.presence_of_element_located(
-                    (
-                        By.CSS_SELECTOR,
-                        ".job-details-jobs-unified-top-card__company-name a",
+        num_jobs = len(job_elements)
+        for i in range(num_jobs):
+            try:
+
+                jobs_list = self.wait.until(
+                    EC.presence_of_all_elements_located(
+                        (By.XPATH, "//li[contains(@class, 'ember-view')]")
                     )
                 )
-            )
-            company_name = company.text
+                job = jobs_list[i]
+                job.click()
 
-            title = self.wait.until(
-                EC.presence_of_element_located(
-                    (By.XPATH, "//h1[@class='t-24 t-bold inline']/a")
+                time.sleep(2)
+
+                company = self.wait.until(
+                    EC.presence_of_element_located(
+                        (
+                            By.CSS_SELECTOR,
+                            ".job-details-jobs-unified-top-card__company-name a",
+                        )
+                    )
                 )
-            )
-            job_title = title.text
-            job_data.append({"company": company_name, "title": job_title})
-        print(job_data)
+                company_name = company.text
+
+                title = self.wait.until(
+                    EC.presence_of_element_located(
+                        (By.XPATH, "//h1[@class='t-24 t-bold inline']/a")
+                    )
+                )
+                job_title = title.text
+
+                prefrences_div = self.wait.until(
+                    EC.presence_of_element_located(
+                        (By.CLASS_NAME, "job-details-fit-level-preferences")
+                    )
+                )
+                buttons = prefrences_div.find_elements(By.TAG_NAME, "button")
+                prefrences = [btn.text.strip() for btn in buttons]
+
+                description_div = self.wait.until(
+                    EC.presence_of_element_located((By.ID, "job-details"))
+                )
+                # desc_spans = description_div.find_elements(By.TAG_NAME, "span")
+                # full_description = "\n".join(
+                #     [span.text.strip() for span in desc_spans if span.text.strip()]
+                # )
+                full_description = description_div.text
+                job_data.append(
+                    {
+                        "company": company_name,
+                        "title": job_title,
+                        "prefrences": prefrences,
+                        "description": full_description,
+                    }
+                )
+            except Exception as e:
+                print(f"stale element reference action{e}")
+
+        jobs = Jobs(job_data)
+        jobs.save_job_to_file()
 
     def run(self):
         try:

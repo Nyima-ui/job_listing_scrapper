@@ -37,19 +37,22 @@ class Job:
 
 
 class Jobs:
-    def __init__(self, filename="/data/jobs.json"):
+    def __init__(
+        self,
+        jobs_data,
+        filename=None,
+    ):
+        if filename is None:
+            base_dir = os.path.dirname(os.path.abspath(__file__))
+            filename = os.path.join(base_dir, "..", "data", "jobs.json")
+
         self.filename = filename
-        self.jobs = self.load_jobs()
+        self.jobs_data = jobs_data
 
-    def load_jobs(self):
-        if os.path.exists(self.filename):
-            with open(self.filename, "r") as f:
-                return json.load(f)
-        return []
+    def save_job_to_file(self):
+        with open(self.filename, "w", encoding='utf-8') as f:
+            json.dump(self.jobs_data, f, indent=4)
 
-    def save_job(self):
-        with open(self.filename, "w") as f:
-            json.dump(self.jobs, f, indent=4)
 
-    def add_job(self):
-        pass
+
+
