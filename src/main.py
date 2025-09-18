@@ -37,9 +37,11 @@ def create_driver():
     driver.wait = WebDriverWait(driver, 20)
     return driver
 
+
 # =================
 # AUTH & NAVIGATION
 # =================
+
 
 def login_linkedIn(driver):
     driver.get("https://www.linkedin.com/feed/")
@@ -70,14 +72,16 @@ def show_all_jobs(driver):
         EC.element_to_be_clickable(
             (
                 By.XPATH,
-                '//a[@href="https://www.linkedin.com/jobs/collections/recommended/?discover=recommended&discoveryOrigin=JOBS_HOME_JYMBII"]',
+                '//a[contains(@href, "/jobs/collections/recommended/")]',
             )
         )
     )
     show_all_btn.click()
 
 
-jobs_list = []
+# =================
+# DATE EXTRACTION
+# =================
 
 
 def get_job_title(driver):
@@ -99,56 +103,74 @@ def get_company_name(driver):
 
 
 def get_preferences(driver):
-    preferences_div = driver.wait.until(
-        EC.presence_of_element_located(
-            (By.CLASS_NAME, "job-details-fit-level-preferences")
+    try:
+        preferences_div = driver.wait.until(
+            EC.presence_of_element_located(
+                (By.CLASS_NAME, "job-details-fit-level-preferences")
+            )
         )
-    )
-    buttons = preferences_div.find_elements(By.TAG_NAME, "button")
-    prefrences = [btn.text.strip() for btn in buttons]
-    return prefrences
+        buttons = preferences_div.find_elements(By.TAG_NAME, "button")
+        prefrences = [btn.text.strip() for btn in buttons]
+        return prefrences
+    except Exception:
+        return []
 
 
 def get_date_posted(driver):
     spans = driver.wait.until(
         EC.visibility_of_all_elements_located((By.CLASS_NAME, "tvm__text"))
     )
-    span_with_ago = None
     for span in spans:
         if "ago" in span.text:
-            span_with_ago = span
-            break
-    if span_with_ago:
-        return span_with_ago.text
-    else:
-        print("❌ Couldn't get the span text or span")
-        return None
-    
+            return span.text
+    return None
 
 
+# =================
+# SCRAPPER LOOP
+# =================
 
 
 def click_each_job(driver):
-    jobs_card = driver.wait.until(
-        EC.visibility_of_any_elements_located(
-            (By.XPATH, "//li[contains(@class, 'ember-view')]")
-        )
-    )
-    for job_card in jobs_card:
-        job_card.click()
-        time.sleep(1.5)
+    jobs_data = []
 
-        job = {}
-        job["job-title"] = get_job_title(driver)
-        job["company-name"] = get_company_name(driver)
-        job["preferences"] = get_preferences(driver)
-        job["date-posted"] = get_date_posted(driver)
-        job["job-link"] = driver.current_url
-        jobs_list.append(job)
+    job_index = 0
+    while True:
+        try:
+            jobs_card = driver.wait.until(
+                EC.visibility_of_any_elements_located(
+                    (By.XPATH, "//li[contains(@class, 'ember-view')]")
+                )
+            )
+            if job_index >= len(jobs_card):
+                break
 
-    time.sleep(10)
+            job_card = jobs_card[job_index]
+            driver.execute_script("arguments[0].scrollIntoView();", job_card)
+            job_card.click()
+            time.sleep(1.5)
+
+            job = {
+                "job-title": get_job_title(driver),
+                "company-name": get_company_name(driver),
+                "preferences": get_preferences(driver),
+                "date-posted": get_date_posted(driver),
+                "job-link": driver.current_url,
+            }
+
+            jobs_data.append(job)
+            print(f"✅ Extracted job {job_index + 1}")
+            job_index += 1
+        except Exception as e:
+            print(f"❌ Error extracting job data {job_index + 1} {e}")
+            job_index += 1
+
+    return jobs_data
 
 
+# =================
+# MAIN
+# =================
 def main():
     driver = create_driver()
     login_linkedIn(driver)
@@ -156,7 +178,11 @@ def main():
     show_all_jobs(driver)
     click_each_job(driver)
 
+    jobs_list = click_each_job(driver)
     write_in_json(jobs_list)
+    print(f"✅ Scraped {len(jobs_list)} jobs and saved to file.")
+    time.sleep(60)
+    driver.quit()
 
 
 if __name__ == "__main__":
