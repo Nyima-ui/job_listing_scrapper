@@ -7,7 +7,8 @@
             "Remote",
             "Full-time"
         ],
-        "date-posted": "Reposted 1 week ago"
+        "date-posted": "Reposted 1 week ago",
+        "job-link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4275335207"
     },
     {
         "job-title": "Remote Full-Stack Developer",
@@ -16,24 +17,28 @@
             "Remote",
             "Full-time"
         ],
-        "date-posted": "Reposted 6 days ago"
+        "date-posted": "Reposted 6 days ago",
+        "job-link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4273386046"
     },
     {
-        "job-title": "Senior Software Engineer -JAVA",
+        "job-title": "Fullstack Engineer",
         "company-name": "Uplers",
         "preferences": [
             "Remote",
             "Full-time"
         ],
-        "date-posted": "23 hours ago"
+        "date-posted": "5 hours ago",
+        "job-link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4302260561"
     },
     {
-        "job-title": "Senior Full Stack Engineer (ReactJS, React native & Python)",
+        "job-title": "Angular Developer with Vibe Coding (Remote)",
         "company-name": "Uplers",
         "preferences": [
+            "$27.6K/yr - $33.6K/yr",
             "Remote",
             "Full-time"
         ],
-        "date-posted": "1 week ago"
+        "date-posted": "Reposted 50 minutes ago",
+        "job-link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4267063602"
     }
 ]
