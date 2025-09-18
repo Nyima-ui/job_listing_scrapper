@@ -1,29 +1,39 @@
 [
     {
-        "company": "Uplers",
-        "title": "Front end Engineer",
-        "prefrences": [
+        "job-title": "Web Developer (Wordpress Fullstack Developer)",
+        "company-name": "Uplers",
+        "preferences": [
+            "\u20b91.2M/yr - \u20b91.8M/yr",
             "Remote",
             "Full-time"
         ],
-        "job-link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4298176731&discover=recommended&discoveryOrigin=JOBS_HOME_JYMBII"
+        "date-posted": "Reposted 1 week ago"
     },
     {
-        "company": "Turing",
-        "title": "Remote Full-Stack Developer",
-        "prefrences": [
+        "job-title": "Remote Full-Stack Developer",
+        "company-name": "Turing",
+        "preferences": [
             "Remote",
             "Full-time"
         ],
-        "job-link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4273381352&discover=recommended&discoveryOrigin=JOBS_HOME_JYMBII"
+        "date-posted": "Reposted 6 days ago"
     },
     {
-        "company": "Turing",
-        "title": "Rust Developer - 40986",
-        "prefrences": [
+        "job-title": "Senior Software Engineer -JAVA",
+        "company-name": "Uplers",
+        "preferences": [
             "Remote",
-            "Contract"
+            "Full-time"
         ],
-        "job-link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4299121547&discover=recommended&discoveryOrigin=JOBS_HOME_JYMBII"
+        "date-posted": "23 hours ago"
+    },
+    {
+        "job-title": "Senior Full Stack Engineer (ReactJS, React native & Python)",
+        "company-name": "Uplers",
+        "preferences": [
+            "Remote",
+            "Full-time"
+        ],
+        "date-posted": "1 week ago"
     }
 ]

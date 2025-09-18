@@ -1,173 +1,163 @@
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.options import Options
-import undetected_chromedriver as uc
-from selenium import webdriver
-from dotenv import load_dotenv
-
-from jobs_manager import Jobs
-from helper import filter_text
-from gemini import model
-
 import time
 import os
 
-options = Options()
-options.add_argument("--headless=new")
-options.add_argument("--disable-gpu")
-options.add_argument("--no-sandbox")
-options.add_argument("--window-size=1920,1080")
+from helper import write_in_json
+
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+import undetected_chromedriver as uc
+from dotenv import load_dotenv
+
+# =================
+# CONFIG & SETUP
+# =================
 
 load_dotenv()
-EMAIL_ACCOUNT = os.getenv("EMAIL_ACCOUNT")
-LINKED_PW = os.getenv("LINKED_PW")
+
+EMAIL = os.getenv("EMAIL_ACCOUNT")
+PASSWORD = os.getenv("LINKED_PW")
+PROXY_USER = os.getenv("PROXY_USER")
+PROXY_PASS = os.getenv("PROXY_PASS")
+
+# Directories
+script_dir = os.path.dirname(os.path.abspath(__file__))
+extension_path = os.path.join(script_dir, os.pardir, "proxy_auth_extension")
+
+# Proxy - Oxylabs
+proxy = f"http://{PROXY_USER}:{PROXY_PASS}@unblock.oxylabs.io:60000"
 
 
-class LinkedInBot:
-    def __init__(self, email, password, timeout=20):
-        self.email = email
-        self.password = password
-        self.driver = uc.Chrome(options=options)
-        self.wait = WebDriverWait(self.driver, timeout)
+def create_driver():
+    options = uc.ChromeOptions()
+    options.add_argument("--ignore-certificate-errors")
+    options.add_argument(f"--load-extension={extension_path}")
 
-    def login(self):
-        self.driver.get("https://www.linkedin.com/feed/")
+    driver = uc.Chrome(options=options)
+    driver.wait = WebDriverWait(driver, 20)
+    return driver
 
-        email_field = self.wait.until(
-            EC.presence_of_element_located((By.ID, "username"))
-        )
-        email_field.send_keys(self.email)
+# =================
+# AUTH & NAVIGATION
+# =================
 
-        password_field = self.wait.until(
-            EC.presence_of_element_located((By.ID, "password"))
-        )
-        password_field.send_keys(self.password)
+def login_linkedIn(driver):
+    driver.get("https://www.linkedin.com/feed/")
 
-        sign_in_btn = self.wait.until(
-            EC.element_to_be_clickable((By.XPATH, "//button[@type='submit']"))
-        )
-        sign_in_btn.click()
+    email_field = driver.wait.until(EC.presence_of_element_located((By.ID, "username")))
+    email_field.send_keys(EMAIL)
+    password_field = driver.wait.until(
+        EC.presence_of_element_located((By.ID, "password"))
+    )
+    password_field.send_keys(PASSWORD)
+    signin_btn = driver.wait.until(
+        EC.element_to_be_clickable((By.XPATH, '//button[@type="submit"]'))
+    )
+    signin_btn.click()
+    # ---- 30 seconds to solve the captcha manually ----
+    time.sleep(30)
 
-    def go_to_jobs(self):
-        # Navigate directly to the Jobs page for reliability instead of clicking the nav item
-        self.driver.get("https://www.linkedin.com/jobs/")
-        # Wait until the URL reflects the jobs section
-        self.wait.until(EC.url_contains("/jobs"))
 
-    def show_all_jobs(self):
-        try:
-            show_all_btn = self.wait.until(
-                EC.element_to_be_clickable(
-                    (By.XPATH, "//span[normalize-space()='Show all']")
-                )
+def go_to_jobs(driver):
+    jobs_btn = driver.wait.until(
+        EC.element_to_be_clickable((By.XPATH, '//span[text()="Jobs"]'))
+    )
+    jobs_btn.click()
+
+
+def show_all_jobs(driver):
+    show_all_btn = driver.wait.until(
+        EC.element_to_be_clickable(
+            (
+                By.XPATH,
+                '//a[@href="https://www.linkedin.com/jobs/collections/recommended/?discover=recommended&discoveryOrigin=JOBS_HOME_JYMBII"]',
             )
-            show_all_btn.click()
-        except Exception:
-            print("⚠️ 'Show all' button not found or not clickable.")
-
-    def extract_data(self):
-        job_data = []
-        job_elements = self.wait.until(
-            EC.presence_of_all_elements_located(
-                (By.XPATH, "//li[contains(@class, 'ember-view')]")
-            )
         )
-        num_jobs = len(job_elements)
-        for i in range(num_jobs):
-            try:
+    )
+    show_all_btn.click()
 
-                jobs_list = self.wait.until(
-                    EC.presence_of_all_elements_located(
-                        (By.XPATH, "//li[contains(@class, 'ember-view')]")
-                    )
-                )
-                job = jobs_list[i]
-                job.click()
 
-                company_name = self.wait.until(
-                    EC.presence_of_element_located(
-                        (
-                            By.CSS_SELECTOR,
-                            ".job-details-jobs-unified-top-card__company-name a",
-                        )
-                    )
-                ).text
+jobs_list = []
 
-                job_title = self.wait.until(
-                    EC.presence_of_element_located(
-                        (By.XPATH, "//h1[@class='t-24 t-bold inline']/a")
-                    )
-                ).text
 
-                prefrences_div = self.wait.until(
-                    EC.presence_of_element_located(
-                        (By.CLASS_NAME, "job-details-fit-level-preferences")
-                    )
-                )
-                buttons = prefrences_div.find_elements(By.TAG_NAME, "button")
-                prefrences = [btn.text.strip() for btn in buttons]
+def get_job_title(driver):
+    job_title = driver.wait.until(
+        EC.presence_of_element_located(
+            (By.XPATH, '//h1[@class="t-24 t-bold inline"]/a')
+        )
+    ).text
+    return job_title
 
-                # description_div = self.wait.until(
-                #     EC.presence_of_element_located((By.ID, "job-details"))
-                # )
-                # full_description = description_div.text
 
-                # responsibility = model.generate_content(
-                #     "Extract the core responsibilities and roles of the developer from the following job description text. List each responsibility as a separate, concise point."
-                #     + full_description
-                # )
-                # filtered_responsibility = filter_text(responsibility.text)
+def get_company_name(driver):
+    company_name = driver.wait.until(
+        EC.presence_of_element_located(
+            (By.CSS_SELECTOR, ".job-details-jobs-unified-top-card__company-name a")
+        )
+    ).text
+    return company_name
 
-                # requirement = model.generate_content(
-                #     "Extract the specific skills, qualifications, and experience required for the applicant from the job description below. Please list these as bullet points, focusing only on what the candidate needs to possess or demonstrate."
-                #     + full_description
-                # )
-                # filtered_requirement = filter_text(requirement.text)
 
-                # date_posted = self.wait.until(
-                #     EC.visibility_of_element_located(
-                #         (
-                #             By.XPATH,
-                #             "//span[contains(@class, 'tvm__text.tvm__text--low-emphasis:nth-of-type(3)') or contains(@class, 'tvm__text.tvm__text--positive:nth-of-type(3)')]",
-                #         )
-                #     )
-                # ).text
-                # all_spans = self.wait.until(
-                #     EC.visibility_of_all_elements_located((By.CLASS_NAME, "tvm__text"))
-                # )
-                # for span in all_spans: 
-                #     if 'ago' in span.text: 
-                #         print(f"🪙{span.text}")
-                current_page_url = self.driver.current_url
-                job_data.append(
-                    {
-                        "company": company_name,
-                        "title": job_title,
-                        "prefrences": prefrences,
-                        # "responsibility": filtered_responsibility,
-                        # "requirement": filtered_requirement,
-                        # "date-posted": date_posted,
-                        "job-link": current_page_url,
-                    }
-                )
-            except Exception as e:
-                print(f" ⚠️ Error while extracting job data: {e}")
+def get_preferences(driver):
+    preferences_div = driver.wait.until(
+        EC.presence_of_element_located(
+            (By.CLASS_NAME, "job-details-fit-level-preferences")
+        )
+    )
+    buttons = preferences_div.find_elements(By.TAG_NAME, "button")
+    prefrences = [btn.text.strip() for btn in buttons]
+    return prefrences
 
-        jobs = Jobs(job_data)
-        jobs.save_job_to_file()
 
-    def run(self):
-        try:
-            self.login()
-            self.go_to_jobs()
-            self.show_all_jobs()
-            self.extract_data()
-            time.sleep(360)
-        finally:
-            self.driver.quit()
+def get_date_posted(driver):
+    spans = driver.wait.until(
+        EC.visibility_of_all_elements_located((By.CLASS_NAME, "tvm__text"))
+    )
+    span_with_ago = None
+    for span in spans:
+        if "ago" in span.text:
+            span_with_ago = span
+            break
+    if span_with_ago:
+        return span_with_ago.text
+    else:
+        print("❌ Couldn't get the span text or span")
+        return None
+    
+
+
+
+
+def click_each_job(driver):
+    jobs_card = driver.wait.until(
+        EC.visibility_of_any_elements_located(
+            (By.XPATH, "//li[contains(@class, 'ember-view')]")
+        )
+    )
+    for job_card in jobs_card:
+        job_card.click()
+        time.sleep(1.5)
+
+        job = {}
+        job["job-title"] = get_job_title(driver)
+        job["company-name"] = get_company_name(driver)
+        job["preferences"] = get_preferences(driver)
+        job["date-posted"] = get_date_posted(driver)
+        job["job-link"] = driver.current_url
+        jobs_list.append(job)
+
+    time.sleep(10)
+
+
+def main():
+    driver = create_driver()
+    login_linkedIn(driver)
+    go_to_jobs(driver)
+    show_all_jobs(driver)
+    click_each_job(driver)
+
+    write_in_json(jobs_list)
 
 
 if __name__ == "__main__":
-    bot = LinkedInBot(EMAIL_ACCOUNT, LINKED_PW)
-    bot.run()
+    main()
