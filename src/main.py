@@ -1,7 +1,9 @@
 import time
 import os
+import random
 
 from helper import write_in_json
+from gemini import model
 
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
@@ -126,45 +128,59 @@ def get_date_posted(driver):
     return None
 
 
+def get_job_desciption(driver):
+    description_div = driver.wait.until(
+        EC.presence_of_element_located((By.ID, "job-details"))
+    )
+    description_text = description_div.text.strip()
+    responsibility_prompt = (
+        "Here is a job description. Extract only the job responsibilities as a clean, concise list. "
+        "Don’t add any extra text or introduction—just output the list directly.\n\n"
+        f"{description_text}"
+    )
+    requirement_prompt = (
+        "Here is a job description. Extract only the job requirements as a clean, concise list. "
+        "Don’t add any extra text or introduction—just output the list directly.\n\n"
+        f"{description_text}"
+    )
+    responsibility = model.generate_content(responsibility_prompt).text
+    requirement = model.generate_content(requirement_prompt).text
+    return {"responsibility": responsibility, "requirement": requirement}
+
+
 # =================
 # SCRAPPER LOOP
 # =================
-
-
 def click_each_job(driver):
     jobs_data = []
-
-    job_index = 0
-    while True:
-        try:
-            jobs_card = driver.wait.until(
-                EC.visibility_of_any_elements_located(
-                    (By.XPATH, "//li[contains(@class, 'ember-view')]")
-                )
+    try:
+        jobs_card = driver.wait.until(
+            EC.visibility_of_any_elements_located(
+                (By.XPATH, "//li[contains(@class, 'ember-view')]")
             )
-            if job_index >= len(jobs_card):
-                break
-
-            job_card = jobs_card[job_index]
-            driver.execute_script("arguments[0].scrollIntoView();", job_card)
+        )
+        for job_card in jobs_card:
             job_card.click()
-            time.sleep(1.5)
+            sleep_time1 = random.uniform(3, 8)
+            sleep_time2 = random.uniform(1, 3)
+            time.sleep(sleep_time1)
 
+            job_description = get_job_desciption(driver)
+            time.sleep(sleep_time2)
             job = {
                 "job-title": get_job_title(driver),
                 "company-name": get_company_name(driver),
                 "preferences": get_preferences(driver),
                 "date-posted": get_date_posted(driver),
+                "responsibility": job_description["responsibility"],
+                "requirement": job_description["requirement"],
                 "job-link": driver.current_url,
             }
-
             jobs_data.append(job)
-            print(f"✅ Extracted job {job_index + 1}")
-            job_index += 1
-        except Exception as e:
-            print(f"❌ Error extracting job data {job_index + 1} {e}")
-            job_index += 1
+            print(f"✅ Extracted a job")
 
+    except Exception as e:
+        print(f"❌ Error extracting job data  {e}")
     return jobs_data
 
 

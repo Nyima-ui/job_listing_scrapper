@@ -1,10 +1,12 @@
-import os
 import json
+from pathlib import Path
 
-helper_dir = os.path.dirname(os.path.abspath(__file__))
-jobs_file_path = os.path.join(helper_dir, os.pardir, "data", "jobs.json")
+jobs_file_path = Path(__file__).resolve().parent.parent / "data" / "jobs.json"
 
 
 def write_in_json(jobs_list):
-    with open(jobs_file_path, "w", encoding="utf-8") as f:
-        json.dump(jobs_list, f, indent=4)
+    try:
+        with jobs_file_path.open("w", encoding="utf-8") as f:
+            json.dump(jobs_list, f, indent=4, ensure_ascii=False)
+    except (OSError, TypeError) as e:
+        print(f"❌ Error writing to JSON file: {e}")

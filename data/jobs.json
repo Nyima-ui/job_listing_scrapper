@@ -1,14 +1,16 @@
 [
     {
-        "job-title": "Web Developer (Wordpress Fullstack Developer)",
+        "job-title": "Senior Front-End Developer (React) Remote",
         "company-name": "Uplers",
         "preferences": [
-            "\u20b91.2M/yr - \u20b91.8M/yr",
+            "$35K/yr",
             "Remote",
             "Full-time"
         ],
-        "date-posted": "Reposted 1 week ago",
-        "job-link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4275335207"
+        "date-posted": "Reposted 2 days ago",
+        "responsibility": "* Lead the development of cutting-edge web applications using React to improve user experiences.\n* Collaborate closely with UI/UX designers to create accessible, intuitive, and visually appealing interfaces.\n* Optimize performance using advanced React techniques (code-splitting, lazy loading, tree-shaking) to ensure fast load times and scalability.\n* Integrate with RESTful, OData, and GraphQL APIs, ensuring seamless data flow and robust functionality.\n* Mentor and guide junior developers, fostering a collaborative and innovative environment.\n* Deploy React applications using Azure Static Web Apps, optimizing the deployment process via CI/CD pipelines in GitHub Actions.\n* Continuously test and debug to ensure code quality and application stability.",
+        "requirement": "* 6+ years of front-end development experience with React\n* Strong proficiency in JavaScript (ES6+), HTML5, and CSS3\n* Experience with state management tools such as Redux or Context API\n* Familiarity with tools like Git, Webpack, and component libraries (e.g., Material-UI, Tailwind CSS)\n* Experience with testing frameworks (e.g., Jest, Cypress)\n* Experience building scalable, maintainable codebases\n* Knowledge of TypeScript\n* Server-side rendering (Next.js is a plus)\n* Experience deploying web applications to Azure Static Web Apps\n* Familiarity with OData services, RESTful APIs, and GraphQL\n* Expertise in CI/CD pipelines (GitHub Actions) for automating testing, building, and deployment\n* Experience with Progressive Web Applications (PWA) development\n* Knowledge of Docker and Kubernetes for development environments\n* Familiarity with micro-frontends architecture",
+        "job-link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4291246812"
     },
     {
         "job-title": "Remote Full-Stack Developer",
@@ -17,28 +19,35 @@
             "Remote",
             "Full-time"
         ],
-        "date-posted": "Reposted 6 days ago",
-        "job-link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4273386046"
+        "date-posted": "Reposted 1 week ago",
+        "responsibility": "* Write clean, reusable, and maintainable code.\n* Participate in code reviews to ensure high-quality standards.\n* Develop scalable, modular web applications with a focus on security and stability.\n* Collaborate with teams to build advanced AI-driven solutions.\n* Deliver well-structured and documented code.",
+        "requirement": "*   Strong JavaScript or TypeScript skills\n*   Open to applicants of all levels, from junior to industry experts\n*   Bachelor’s or Master’s degree in Computer Science, Engineering, or equivalent experience\n*   Strong understanding of ES6 and frameworks like Node.js or React\n*   Knowledge of front-end, back-end, or full-stack development\n*   Interest in building scalable, secure web applications with clean architecture\n*   Good spoken and written communication skills in English",
+        "job-link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4273378972"
     },
     {
-        "job-title": "Fullstack Engineer",
+        "job-title": "Senior Full Stack Engineer - (C#/.net & React JS) REMOTE",
         "company-name": "Uplers",
         "preferences": [
+            "$45K/yr",
             "Remote",
             "Full-time"
         ],
-        "date-posted": "5 hours ago",
-        "job-link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4302260561"
+        "date-posted": "15 hours ago",
+        "responsibility": "* Design, develop, and maintain scalable and performant applications using C# .NET WebApi for backend services.\n* Migrate a legacy Ruby on Rails codebase to C# .NET WebApi while maintaining functionality and performance.\n* Build dynamic, responsive front-end applications using Next.js or React.\n* Engineer and optimize databases with PostgreSQL, ensuring data integrity and performance.\n* Adhere to security best practices and address risks based on the OWASP Top 10 guidelines.\n* Utilize DevOps principles such as Continuous Deployment, Feature Flagging, and Infrastructure as Code (IaC).\n* Develop and maintain robust automated testing frameworks using tools like Selenium or Playwright to ensure high-quality releases.\n* Collaborate with product managers, designers, and other engineers to create innovative features and user experiences.\n* Coordinate effectively with US-based employees to ensure alignment and seamless communication across time zones.\n* Knowledge in AI-powered tools like Caliplot and Azure AI to streamline development workflows, enhance application functionality\n* Write clear, concise documentation and communicate effectively in English through written and verbal mediums.\n* Conduct peer code reviews to maintain high-quality standards and promote team growth.\n* Mentor junior developers, fostering a culture of learning and collaboration.",
+        "requirement": "*   6+ years of overall experience.\n*   At least 7 years of strong programming experience in C# .NET WebApi.\n*   Advanced proficiency in Next.js or React for front-end development.\n*   Expertise in PostgreSQL for database engineering and performance tuning.\n*   Proven experience migrating legacy Ruby on Rails codebases to C# .NET WebApi.\n*   Familiarity with OWASP Top 10 and security-focused development practices.\n*   Experience with DevOps principles, including Continuous Deployment, Feature Flagging, and Infrastructure as Code (IaC).\n*   Proficiency in automated testing frameworks (e.g., Selenium, Playwright).\n*   Knowledge in Artificial Intelligence and AI-powered tools (e.g., Caliplot, Azure AI).\n*   Working knowledge of cloud platforms (AWS/Azure/GCP).\n*   Excellent written and verbal fluency in English.\n*   Strong communication and collaboration skills, including availability to collaborate during US-based overlapping working hours.\n*   Excellent debugging, problem-solving, and optimization skills.\n*   Ability to conduct peer code reviews.\n*   Ability to mentor junior developers.\n*   **Preferred:** Working knowledge of Microsoft Azure.\n*   **Preferred:** Experience with TypeScript.\n*   **Preferred:** Familiarity with CI/CD pipelines (e.g., GitHub Actions, Jenkins).\n*   **Preferred:** Awareness of modern authentication methods (e.g., OAuth, JWT).",
+        "job-link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4302507157"
     },
     {
-        "job-title": "Angular Developer with Vibe Coding (Remote)",
+        "job-title": "Senior / Lead Full-Stack Engineer (AI-Accelerated)",
         "company-name": "Uplers",
         "preferences": [
-            "$27.6K/yr - $33.6K/yr",
+            "$44.4K/yr",
             "Remote",
             "Full-time"
         ],
-        "date-posted": "Reposted 50 minutes ago",
-        "job-link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4267063602"
+        "date-posted": "Reposted 4 days ago",
+        "responsibility": "*   Strengthen and extend the existing prototype built with Next.js / React (TypeScript), backed by PostgreSQL / Supabase.\n*   Refine onboarding, risk-scoring, case-management, and reporting workflows.\n*   Add KYC/AML data sources, payment processing, advanced authentication (MFA, SSO), alert/notification channels, and domain association.\n*   Drive end-to-end testing, security controls, and regulated-industry compliance.\n*   Use Cursor, Claude, Copilot, etc. for code generation, test scaffolding, migration scripts, documentation, and quick architectural prototypes.\n*   Prototype AI-powered product capabilities (e.g., suspicious-activity insights, natural-language rule builders).\n*   Design, deploy, and operate scalable infrastructure on Vercel or Google Cloud Platform (GCP), with CI/CD, observability, performance tuning, and cost optimisation.\n*   Partner with the Solution Architect / Product Manager on backlog grooming, workshops, and agile ceremonies.\n*   Establish coding standards, lead code reviews, mentor teammates, and foster a product-engineering mindset.",
+        "requirement": "*   4+ years professional software development experience, including 2+ years in a senior or lead capacity.\n*   Production expertise with Next.js & React, strict TypeScript, and modern state-management patterns.\n*   Deep SQL & schema design on PostgreSQL, plus hands-on Supabase (RLS, Functions, Auth).\n*   Node.js experience.\n*   Experience deploying and operating workloads on Vercel or GCP.\n*   Daily user of Cursor, Claude (Code), GitHub Copilot, or comparable AI coding assistants.\n*   Track record of shipping in agile, product-led startup environments—balancing speed with maintainability.\n*   Excellent written & spoken English for crisp specs, PRs, and stakeholder communication.\n*   AML/KYC experience.\n*   Sanctions-screening experience.\n*   Experience implementing Stripe, Paddle, or similar payment flows.\n*   Experience with Infrastructure-as-code (Terraform, Pulumi) and secure SDLC practices.\n*   Ability to own the build—shipping features fast, integrating third-party services, hardening for security and compliance.\n*   Comfortable utilizing AI tooling (Bolt, v0, Cursor, Claude Code, GitHub Copilot) into everyday development.\n*   Experience strengthening and extending existing prototypes built with Next.js / React (TypeScript) and PostgreSQL / Supabase.\n*   Ability to refine onboarding, risk-scoring, case-management, and reporting workflows.\n*   Experience adding KYC/AML data sources, payment processing, advanced authentication (MFA, SSO), alert/notification channels, and domain association.\n*   Ability to drive end-to-end testing, security controls, and regulated-industry compliance.\n*   Capability to prototype AI-powered product capabilities (e.g., suspicious-activity insights, natural-language rule builders).\n*   Experience designing, deploying, and operating scalable infrastructure with CI/CD, observability, performance tuning, and cost optimization.\n*   Ability to partner with Solution Architect / Product Manager on backlog grooming, workshops, and agile ceremonies.\n*   Experience establishing coding standards, leading code reviews, mentoring teammates, and fostering a product-engineering mindset.\n*   **Nice-to-haves:**\n    *   Experience with other compliance-driven systems.\n    *   Built notification pipelines with Twilio, OneSignal, or equivalent.\n    *   Familiarity with LLM fine-tuning / retrieval-augmented generation and vector databases.",
+        "job-link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4265230759"
     }
 ]
