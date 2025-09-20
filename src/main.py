@@ -3,13 +3,16 @@ import os
 import random
 
 from helper import write_in_json
+from helper import jobs_file_path
 from gemini import model
+from pandas_utils import write_to_excel
 
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 import undetected_chromedriver as uc
 from dotenv import load_dotenv
+import pandas as pd
 
 # =================
 # CONFIG & SETUP
@@ -192,12 +195,16 @@ def main():
     login_linkedIn(driver)
     go_to_jobs(driver)
     show_all_jobs(driver)
-    click_each_job(driver)
 
     jobs_list = click_each_job(driver)
     write_in_json(jobs_list)
     print(f"✅ Scraped {len(jobs_list)} jobs and saved to file.")
-    time.sleep(60)
+    time.sleep(5)
+    df = pd.read_json(jobs_file_path)
+    df.to_csv("jobs_data.csv", index=False)
+    print(f"✅ Saved data to a csv file: jobs_data.csv")
+    write_to_excel()
+    print(f"✅ Saved data to a excel file: jobs_data.xlsx")
     driver.quit()
 
 
