@@ -1,18 +1,5 @@
 [
     {
-        "job-title": "Senior Front-End Developer (React) Remote",
-        "company-name": "Uplers",
-        "preferences": [
-            "$35K/yr",
-            "Remote",
-            "Full-time"
-        ],
-        "date-posted": "Reposted 3 days ago",
-        "responsibility": "*   Lead the development of cutting-edge web applications using React to improve user experiences.\n*   Collaborate closely with UI/UX designers to create accessible, intuitive, and visually appealing interfaces.\n*   Optimize performance using advanced React techniques (code-splitting, lazy loading, tree-shaking) to ensure fast load times and scalability.\n*   Integrate with RESTful, OData, and GraphQL APIs, ensuring seamless data flow and robust functionality.\n*   Mentor and guide junior developers, fostering a collaborative and innovative environment.\n*   Deploy React applications using Azure Static Web Apps, optimizing the deployment process via CI/CD pipelines in GitHub Actions.\n*   Continuously test and debug to ensure code quality and application stability.",
-        "requirement": "*   6+ years of front-end development experience with React\n*   Strong proficiency in JavaScript (ES6+)\n*   HTML5\n*   CSS3\n*   State management tools (e.g., Redux, Context API)\n*   Git\n*   Webpack\n*   Component libraries (e.g., Material-UI, Tailwind CSS)\n*   Testing frameworks (e.g., Jest, Cypress)\n*   Building scalable, maintainable codebases\n*   TypeScript\n*   Server-side rendering (Next.js is a plus)\n*   Experience deploying web applications to Azure Static Web Apps\n*   OData services\n*   RESTful APIs\n*   GraphQL\n*   CI/CD pipelines (GitHub Actions)\n*   Micro-frontend architecture\n*   Docker\n*   Kubernetes\n*   Progressive Web Applications (PWA)",
-        "job-link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4291254013"
-    },
-    {
         "job-title": "Remote Full-Stack Developer",
         "company-name": "Turing",
         "preferences": [
@@ -21,31 +8,45 @@
         ],
         "date-posted": "Reposted 1 week ago",
         "responsibility": "* Write clean, reusable, and maintainable code.\n* Participate in code reviews to ensure high-quality standards.\n* Develop scalable, modular web applications with a focus on security and stability.\n* Collaborate with teams to build advanced AI-driven solutions.\n* Deliver well-structured and documented code.",
-        "requirement": "*   Open to applicants of all levels, from junior to industry experts.\n*   Bachelor’s or Master’s degree in Computer Science, Engineering, or equivalent experience.\n*   Strong understanding of ES6 and frameworks like Node.js or React.\n*   Knowledge of front-end, back-end, or full-stack development.\n*   Interest in building scalable, secure web applications with clean architecture.\n*   Good spoken and written communication skills in English.",
-        "job-link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4273386039"
+        "requirement": "*   Strong JavaScript or TypeScript skills\n*   Bachelor’s or Master’s degree in Computer Science, Engineering, or equivalent experience\n*   Strong understanding of ES6 and frameworks like Node.js or React\n*   Knowledge of front-end, back-end, or full-stack development\n*   Ability to write clean, reusable, maintainable, well-structured, and documented code\n*   Ability to develop scalable, modular web applications with a focus on security and stability\n*   Ability to participate in code reviews\n*   Ability to collaborate with teams to build advanced AI-driven solutions\n*   Good spoken and written communication skills in English",
+        "job-link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4273385068"
     },
     {
-        "job-title": "Senior Drupal & PHP Developer with ASP.NET",
-        "company-name": "Braintrust",
+        "job-title": "Senior Front-End Developer (React) Remote",
+        "company-name": "Uplers",
         "preferences": [
+            "$35K/yr",
             "Remote",
             "Full-time"
+        ],
+        "date-posted": "Reposted 4 days ago",
+        "responsibility": "* Lead the development of cutting-edge web applications using React to improve user experiences.\n* Collaborate closely with UI/UX designers to create accessible, intuitive, and visually appealing interfaces.\n* Optimize performance using advanced React techniques (code-splitting, lazy loading, tree-shaking) to ensure fast load times and scalability.\n* Integrate with RESTful, OData, and GraphQL APIs, ensuring seamless data flow and robust functionality.\n* Mentor and guide junior developers, fostering a collaborative and innovative environment.\n* Deploy React applications using Azure Static Web Apps, optimizing the deployment process via CI/CD pipelines in GitHub Actions.\n* Continuously test and debug to ensure code quality and application stability.",
+        "requirement": "*   6+ years of front-end development experience with React\n*   Micro-frontend architecture\n*   Azure Static Web Apps (experience deploying web applications)\n*   OData services\n*   Strong proficiency in JavaScript (ES6+)\n*   HTML5\n*   CSS3\n*   Docker\n*   Kubernetes\n*   Progressive Web Applications (PWA)\n*   State management tools (Redux, Context API)\n*   TypeScript\n*   Familiarity with tools like Git, Webpack, and component libraries (e.g., Material-UI, Tailwind CSS)\n*   Experience with testing frameworks (e.g., Jest, Cypress)\n*   Building scalable, maintainable codebases\n*   Familiarity with RESTful APIs and GraphQL\n*   Expertise in CI/CD pipelines (GitHub Actions) for automating testing, building, and deployment\n*   Knowledge of server-side rendering",
+        "job-link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4291254013"
+    },
+    {
+        "job-title": "Frontend Development Intern",
+        "company-name": "IG Tech",
+        "preferences": [
+            "Remote",
+            "Internship"
         ],
         "date-posted": "2 days ago",
-        "responsibility": "* Develop and maintain applications using Drupal (latest version) and PHP.\n* Contribute to ASP.NET development with a minimum of 5 years of proven experience.\n* Support production Drupal platforms, especially those integrated with ASP.NET.\n* Participate in Drupal + PHP upgrade projects.\n* Customize PHP within Drupal to meet specific requirements.\n* Troubleshoot and resolve issues in Drupal + PHP production environments.\n* Collaborate with global teams during overlapping US Central Time working hours.",
-        "requirement": "* Minimum 2 years of hands-on development experience with Drupal & PHP (latest version)\n* At least 5 years of experience with ASP.NET development\n* Prior experience in production Drupal environments\n* Experience in Drupal environments integrated with ASP.NET (preferred)\n* Strong problem-solving skills for production issue troubleshooting\n* Experience in Drupal + PHP upgrade projects (desirable)\n* Knowledge of other CMS systems (a plus)",
-        "job-link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4302104610"
+        "responsibility": "*   Transform designs into functional, visually appealing web applications.\n*   Build responsive layouts.\n*   Improve user experiences.\n*   Work with modern frameworks.",
+        "requirement": "*   Pursuing or recently completed a degree in Computer Science, IT, or related fields\n*   Proficiency in HTML, CSS, and JavaScript\n*   Familiarity with frameworks like React, Angular, or Vue\n*   Understanding of responsive design principles\n*   Basic knowledge of Git/GitHub for version control\n*   Creativity, problem-solving, and attention to detail",
+        "job-link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4300631848"
     },
     {
-        "job-title": "[AS177] Senior PHP Laravel Developer (Remote, Full-Time)",
-        "company-name": "Smart Working",
+        "job-title": "Senior .NET & Database Developer – Data Migration",
+        "company-name": "Uplers",
         "preferences": [
+            "A$50K/yr",
             "Remote",
             "Full-time"
         ],
-        "date-posted": "2 weeks ago",
-        "responsibility": "*   Collaborate with the engineering team to complete backend projects using PHP and Laravel\n*   Troubleshoot and fix issues in PHP applications; identify root causes and verify fixes\n*   Design and implement greenfield systems with Laravel, writing clean and maintainable code\n*   Build and maintain RESTful APIs and integrations\n*   Use Git effectively (branching, pull requests, reviews) to support collaborative workflows",
-        "requirement": "*   Bachelor’s degree in Computer Science, Engineering, or a related discipline (or equivalent practical experience)\n*   4+ years of professional experience in software development\n*   PHP & Laravel: 3+ years building production applications\n*   Working understanding of REST APIs, including design, debugging, and integration\n*   Proficiency with Git version control in collaborative development environments",
-        "job-link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4294471786"
+        "date-posted": "Reposted 2 weeks ago",
+        "responsibility": "*   Lead the planning, design and execution of high-volume data migration projects, ensuring integrity, performance and security.\n*   Collaborate closely with stakeholders to analyse legacy systems, define data mapping and transformation requirements, and develop robust ETL processes.\n*   Work as a senior member of an Agile/Scrum team, partnering with Solution Architects, Developers and Testers to deliver seamless migrations.\n*   Write, review and optimise migration scripts and WinForms utilities using C# and SQL Server.\n*   Mentor and upskill more junior team members in database best practices, coding standards and data migration techniques.\n*   Drive continuous improvement by investigating emerging tools and methodologies to enhance scalability and maintainability.",
+        "requirement": "*   Minimum 5 years’ experience in a data migration or similar .NET/database development role.\n*   Tertiary degree in Computer Science, IT or related discipline (or equivalent experience).\n*   Deep expertise in C#, ADO.NET/Entity Framework, SQL Server (T-SQL, performance tuning), and WinForms.\n*   Proven track record designing and delivering ETL solutions, data cleansing, and validation.\n*   Solid understanding of the full SDLC, with hands-on experience in Agile software delivery.\n*   Strong problem-solving skills, attention to detail, and a passion for data quality.\n*   Excellent verbal and written communication skills, with a collaborative mindset and willingness to share knowledge.\n*   Dependency Injection\n*   Octopus Deploy\n*   SOLID principles\n*   TeamCity\n*   Web API\n*   .NET Core\n*   AWS\n*   Azure\n*   Azure Data Factory\n*   Azure DevOps\n*   Git\n*   TDD\n*   .NET\n*   Ability to lead the planning, design, and execution of high-volume data migration projects, ensuring integrity, performance, and security.\n*   Ability to collaborate with stakeholders to analyse legacy systems, define data mapping and transformation requirements, and develop robust ETL processes.\n*   Ability to mentor and upskill more junior team members in database best practices, coding standards, and data migration techniques.\n*   Ability to drive continuous improvement by investigating emerging tools and methodologies.\n*   Experience with SSIS or other cloud-based data integration platforms.\n*   Familiarity with MVC.\n*   Exposure to Microsoft Azure SQL Database or AWS data services.\n*   Previous involvement in multi-tenant or SaaS platform delivery.",
+        "job-link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4275631847"
     }
 ]
