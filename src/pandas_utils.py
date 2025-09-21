@@ -23,7 +23,7 @@ def write_to_excel():
                 ws.cell(row=row_idx, column=col_idx, value=value)
 
     # Save the workbook (overwrites the same file)
-    wb.save("jobs_data.xlsx")
+    wb.save(r"C:\Users\Tenzin Nyima\OneDrive\excel_files\jobs_data.xlsx")
 
 if __name__ == "__main__": 
     write_to_excel()

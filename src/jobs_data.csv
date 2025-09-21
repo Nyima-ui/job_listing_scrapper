@@ -1,60 +1,80 @@
 job-title,company-name,preferences,date-posted,responsibility,requirement,job-link
-Senior Front-End Developer (React) Remote,Uplers,"['$35K/yr', 'Remote', 'Full-time']",Reposted 3 days ago,"*   Lead the development of cutting-edge web applications using React to improve user experiences.
-*   Collaborate closely with UI/UX designers to create accessible, intuitive, and visually appealing interfaces.
-*   Optimize performance using advanced React techniques (code-splitting, lazy loading, tree-shaking) to ensure fast load times and scalability.
-*   Integrate with RESTful, OData, and GraphQL APIs, ensuring seamless data flow and robust functionality.
-*   Mentor and guide junior developers, fostering a collaborative and innovative environment.
-*   Deploy React applications using Azure Static Web Apps, optimizing the deployment process via CI/CD pipelines in GitHub Actions.
-*   Continuously test and debug to ensure code quality and application stability.","*   6+ years of front-end development experience with React
-*   Strong proficiency in JavaScript (ES6+)
-*   HTML5
-*   CSS3
-*   State management tools (e.g., Redux, Context API)
-*   Git
-*   Webpack
-*   Component libraries (e.g., Material-UI, Tailwind CSS)
-*   Testing frameworks (e.g., Jest, Cypress)
-*   Building scalable, maintainable codebases
-*   TypeScript
-*   Server-side rendering (Next.js is a plus)
-*   Experience deploying web applications to Azure Static Web Apps
-*   OData services
-*   RESTful APIs
-*   GraphQL
-*   CI/CD pipelines (GitHub Actions)
-*   Micro-frontend architecture
-*   Docker
-*   Kubernetes
-*   Progressive Web Applications (PWA)",https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4291254013
 Remote Full-Stack Developer,Turing,"['Remote', 'Full-time']",Reposted 1 week ago,"* Write clean, reusable, and maintainable code.
 * Participate in code reviews to ensure high-quality standards.
 * Develop scalable, modular web applications with a focus on security and stability.
 * Collaborate with teams to build advanced AI-driven solutions.
-* Deliver well-structured and documented code.","*   Open to applicants of all levels, from junior to industry experts.
-*   Bachelor’s or Master’s degree in Computer Science, Engineering, or equivalent experience.
-*   Strong understanding of ES6 and frameworks like Node.js or React.
-*   Knowledge of front-end, back-end, or full-stack development.
-*   Interest in building scalable, secure web applications with clean architecture.
-*   Good spoken and written communication skills in English.",https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4273386039
-Senior Drupal & PHP Developer with ASP.NET,Braintrust,"['Remote', 'Full-time']",2 days ago,"* Develop and maintain applications using Drupal (latest version) and PHP.
-* Contribute to ASP.NET development with a minimum of 5 years of proven experience.
-* Support production Drupal platforms, especially those integrated with ASP.NET.
-* Participate in Drupal + PHP upgrade projects.
-* Customize PHP within Drupal to meet specific requirements.
-* Troubleshoot and resolve issues in Drupal + PHP production environments.
-* Collaborate with global teams during overlapping US Central Time working hours.","* Minimum 2 years of hands-on development experience with Drupal & PHP (latest version)
-* At least 5 years of experience with ASP.NET development
-* Prior experience in production Drupal environments
-* Experience in Drupal environments integrated with ASP.NET (preferred)
-* Strong problem-solving skills for production issue troubleshooting
-* Experience in Drupal + PHP upgrade projects (desirable)
-* Knowledge of other CMS systems (a plus)",https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4302104610
-"[AS177] Senior PHP Laravel Developer (Remote, Full-Time)",Smart Working,"['Remote', 'Full-time']",2 weeks ago,"*   Collaborate with the engineering team to complete backend projects using PHP and Laravel
-*   Troubleshoot and fix issues in PHP applications; identify root causes and verify fixes
-*   Design and implement greenfield systems with Laravel, writing clean and maintainable code
-*   Build and maintain RESTful APIs and integrations
-*   Use Git effectively (branching, pull requests, reviews) to support collaborative workflows","*   Bachelor’s degree in Computer Science, Engineering, or a related discipline (or equivalent practical experience)
-*   4+ years of professional experience in software development
-*   PHP & Laravel: 3+ years building production applications
-*   Working understanding of REST APIs, including design, debugging, and integration
-*   Proficiency with Git version control in collaborative development environments",https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4294471786
+* Deliver well-structured and documented code.","*   Strong JavaScript or TypeScript skills
+*   Bachelor’s or Master’s degree in Computer Science, Engineering, or equivalent experience
+*   Strong understanding of ES6 and frameworks like Node.js or React
+*   Knowledge of front-end, back-end, or full-stack development
+*   Ability to write clean, reusable, maintainable, well-structured, and documented code
+*   Ability to develop scalable, modular web applications with a focus on security and stability
+*   Ability to participate in code reviews
+*   Ability to collaborate with teams to build advanced AI-driven solutions
+*   Good spoken and written communication skills in English",https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4273385068
+Senior Front-End Developer (React) Remote,Uplers,"['$35K/yr', 'Remote', 'Full-time']",Reposted 4 days ago,"* Lead the development of cutting-edge web applications using React to improve user experiences.
+* Collaborate closely with UI/UX designers to create accessible, intuitive, and visually appealing interfaces.
+* Optimize performance using advanced React techniques (code-splitting, lazy loading, tree-shaking) to ensure fast load times and scalability.
+* Integrate with RESTful, OData, and GraphQL APIs, ensuring seamless data flow and robust functionality.
+* Mentor and guide junior developers, fostering a collaborative and innovative environment.
+* Deploy React applications using Azure Static Web Apps, optimizing the deployment process via CI/CD pipelines in GitHub Actions.
+* Continuously test and debug to ensure code quality and application stability.","*   6+ years of front-end development experience with React
+*   Micro-frontend architecture
+*   Azure Static Web Apps (experience deploying web applications)
+*   OData services
+*   Strong proficiency in JavaScript (ES6+)
+*   HTML5
+*   CSS3
+*   Docker
+*   Kubernetes
+*   Progressive Web Applications (PWA)
+*   State management tools (Redux, Context API)
+*   TypeScript
+*   Familiarity with tools like Git, Webpack, and component libraries (e.g., Material-UI, Tailwind CSS)
+*   Experience with testing frameworks (e.g., Jest, Cypress)
+*   Building scalable, maintainable codebases
+*   Familiarity with RESTful APIs and GraphQL
+*   Expertise in CI/CD pipelines (GitHub Actions) for automating testing, building, and deployment
+*   Knowledge of server-side rendering",https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4291254013
+Frontend Development Intern,IG Tech,"['Remote', 'Internship']",2 days ago,"*   Transform designs into functional, visually appealing web applications.
+*   Build responsive layouts.
+*   Improve user experiences.
+*   Work with modern frameworks.","*   Pursuing or recently completed a degree in Computer Science, IT, or related fields
+*   Proficiency in HTML, CSS, and JavaScript
+*   Familiarity with frameworks like React, Angular, or Vue
+*   Understanding of responsive design principles
+*   Basic knowledge of Git/GitHub for version control
+*   Creativity, problem-solving, and attention to detail",https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4300631848
+Senior .NET & Database Developer – Data Migration,Uplers,"['A$50K/yr', 'Remote', 'Full-time']",Reposted 2 weeks ago,"*   Lead the planning, design and execution of high-volume data migration projects, ensuring integrity, performance and security.
+*   Collaborate closely with stakeholders to analyse legacy systems, define data mapping and transformation requirements, and develop robust ETL processes.
+*   Work as a senior member of an Agile/Scrum team, partnering with Solution Architects, Developers and Testers to deliver seamless migrations.
+*   Write, review and optimise migration scripts and WinForms utilities using C# and SQL Server.
+*   Mentor and upskill more junior team members in database best practices, coding standards and data migration techniques.
+*   Drive continuous improvement by investigating emerging tools and methodologies to enhance scalability and maintainability.","*   Minimum 5 years’ experience in a data migration or similar .NET/database development role.
+*   Tertiary degree in Computer Science, IT or related discipline (or equivalent experience).
+*   Deep expertise in C#, ADO.NET/Entity Framework, SQL Server (T-SQL, performance tuning), and WinForms.
+*   Proven track record designing and delivering ETL solutions, data cleansing, and validation.
+*   Solid understanding of the full SDLC, with hands-on experience in Agile software delivery.
+*   Strong problem-solving skills, attention to detail, and a passion for data quality.
+*   Excellent verbal and written communication skills, with a collaborative mindset and willingness to share knowledge.
+*   Dependency Injection
+*   Octopus Deploy
+*   SOLID principles
+*   TeamCity
+*   Web API
+*   .NET Core
+*   AWS
+*   Azure
+*   Azure Data Factory
+*   Azure DevOps
+*   Git
+*   TDD
+*   .NET
+*   Ability to lead the planning, design, and execution of high-volume data migration projects, ensuring integrity, performance, and security.
+*   Ability to collaborate with stakeholders to analyse legacy systems, define data mapping and transformation requirements, and develop robust ETL processes.
+*   Ability to mentor and upskill more junior team members in database best practices, coding standards, and data migration techniques.
+*   Ability to drive continuous improvement by investigating emerging tools and methodologies.
+*   Experience with SSIS or other cloud-based data integration platforms.
+*   Familiarity with MVC.
+*   Exposure to Microsoft Azure SQL Database or AWS data services.
+*   Previous involvement in multi-tenant or SaaS platform delivery.",https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4275631847
